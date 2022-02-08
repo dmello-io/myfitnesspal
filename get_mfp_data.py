@@ -36,11 +36,13 @@ def insert_data(data):
     for meal in meals:
         for entry in meal:
             print(data.date, meal.name, "\t", entry)
-            split_name = entry.name.split(",")
 
+            # get the item name without portion info
+            split_name = entry.name.split(",")
             name = ','.join(split_name[:-1])
             portion = split_name[-1]
 
+            # get the portion size and unit
             split_portion = portion.split(" ")
             portion = split_portion[1]
             unit = ' '.join(split_portion[2:])
